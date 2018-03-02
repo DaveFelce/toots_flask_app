@@ -4,7 +4,7 @@ def read_file_from_disk(filename):
 
     return lines
 
-def make_structured_data(data):
+def get_toots(data):
     """
     Create a structured parent/child list of dicts based on id
 
@@ -37,7 +37,7 @@ def get_children(parent_id, data):
 
         return child_nodes
 
-def make_authors(data):
+def get_authors(data):
     """
     Create a lookup dict keyed on author id with name as value
 
@@ -47,3 +47,20 @@ def make_authors(data):
 
     authors = {d['id']: d['name'] for d in data}
     return authors
+
+def get_toots_by_author(data, author_id_to_filter):
+    """
+    Create a structured parent/child list of dicts based on id, filtered by author_id
+
+    :param data: list of dicts
+    :return: filtered list of dicts
+    """
+    structured_data = []
+    for node in data:
+        parent_id = node.get('parent_id')
+        author_id = node.get('author_id')
+        if parent_id is None and author_id == author_id_to_filter:
+            structured_data.append(node)
+            node['children'] = get_children(node.get('id'), data)
+
+    return structured_data

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Toots!</title>
+    <title>Toots by author</title>
 </head>
 <body>
-<h3>Toots!</h3>
+<h3>Toots filtered by author</h3>
 <ul>
 {%- for toot in toots recursive %}
     {% set author_name = authors[toot['author_id']] %}

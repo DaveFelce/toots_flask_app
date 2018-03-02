@@ -5,24 +5,7 @@
     <title>Toots!</title>
 </head>
 <body>
-<h3>Here they are</h3>
-<ul>
-{%- for toot in toots recursive %}
-    <li>{{ toot.text }}
-    {%- if toot.children -%}
-        <ul>
-            {{ loop(toot.children) }}
-        </ul>
-    {%- endif %}
-    </li>
-{%- endfor %}
-</ul>
-<!--
-<li>
-    <span><a href="/author/{{ author_name }}">{{ author_name }}</a></span>
-    <span>:</span>
-    <span>{{ text }}</span>
-</li>
--->
+<h3>You want to see ..</h3>
+<a href="{{ url_for('authors') }}">Authors</a>
 </body>
 </html>

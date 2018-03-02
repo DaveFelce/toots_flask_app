@@ -9,25 +9,30 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    data = json.loads(read_file_from_disk(os.path.join(app.root_path, 'data', 'toots.json')))
-    toots = make_structured_data(data)
-    return render_template('home.html', toots=toots)
+    return render_template('home.html')
 
 @app.route('/authors')
 def authors():
 
     toots_data = json.loads(read_file_from_disk(os.path.join(app.root_path, 'data', 'toots.json')))
-    toots = make_structured_data(toots_data)
+    toots = get_toots(data=toots_data)
     authors_data = json.loads(read_file_from_disk(os.path.join(app.root_path, 'data', 'authors.json')))
-    authors = make_authors(authors_data)
+    authors = get_authors(data=authors_data)
 
     context = {'authors':authors, 'toots':toots}
     return render_template('authors.html', **context)
 
-@app.route('/author/<author_name>')
-def toot_threads_by_author(author_name):
+@app.route('/author/<author_id>')
+def toot_threads_by_author(author_id):
 
-    return '<span>Specific Toot threads for {author_name}</span>'.format(author_name=author_name)
+    author_id_to_filter = int(author_id)
+    toots_data = json.loads(read_file_from_disk(os.path.join(app.root_path, 'data', 'toots.json')))
+    toots = get_toots_by_author(data=toots_data, author_id_to_filter=author_id_to_filter)
+    authors_data = json.loads(read_file_from_disk(os.path.join(app.root_path, 'data', 'authors.json')))
+    authors = get_authors(data=authors_data)
+
+    context = {'authors':authors, 'toots':toots}
+    return render_template('toots_by_author.html', **context)
 
 
 if __name__ == '__main__':
