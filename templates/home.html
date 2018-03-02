@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toots!</title>
+</head>
+<body>
+<h3>Here they are</h3>
+<ul>
+{%- for toot in toots recursive %}
+    <li>{{ toot.text }}
+    {%- if toot.children -%}
+        <ul>
+            {{ loop(toot.children) }}
+        </ul>
+    {%- endif %}
+    </li>
+{%- endfor %}
+</ul>
+<!--
+<li>
+    <span><a href="/author/{{ author_name }}">{{ author_name }}</a></span>
+    <span>:</span>
+    <span>{{ text }}</span>
+</li>
+-->
+</body>
+</html>

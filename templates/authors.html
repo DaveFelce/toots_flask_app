@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toots!</title>
+</head>
+<body>
+<h3>Here they are</h3>
+<ul>
+{%- for toot in toots recursive %}
+    {% set author_name = authors[toot['author_id']] %}
+    <li>
+        <span><a href="/author/{{ author_name }}">{{ author_name }}</a></span>
+        <span>:</span>
+        <span>{{ toot.text }}</span>
+    {%- if toot.children -%}
+        <ul>
+            {{ loop(toot.children) }}
+        </ul>
+    {%- endif %}
+    </li>
+{%- endfor %}
+</ul>
+</body>
+</html>
