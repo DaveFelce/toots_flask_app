@@ -3,13 +3,13 @@ from nose.tools import *
 
 
 @when(u'The authors page loads')
-def step_impl(context):
+def step_load_authors_page(context):
 
     context.browser.get('http://127.0.0.1:5000/authors')
 
 
 @then(u'I see all authors posts')
-def step_impl(context):
+def step_test_all_authors_posts(context):
 
     browser = context.browser
 

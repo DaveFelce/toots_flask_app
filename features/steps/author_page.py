@@ -3,13 +3,13 @@ from nose.tools import *
 
 
 @when(u'The page loads')
-def step_impl(context):
+def step_load_page(context):
 
     context.browser.get('http://127.0.0.1:5000/author/2')
 
 
 @then(u'I see 3 posts from Fred')
-def step_impl(context):
+def step_should_be_three_fred_posts(context):
 
     browser = context.browser
 
