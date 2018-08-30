@@ -1,0 +1,5 @@
+steps:
+  - label: ":python: Test"
+    commands:
+      - pip install -r requirements.txt
+      - python -m unittest discover -s tests -p '*test.py'
