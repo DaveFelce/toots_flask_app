@@ -1,5 +1,5 @@
 steps:
   - label: ":python: Test"
     commands:
-      - pip install -r requirements.txt
+      - pipenv install
       - python -m unittest discover -s tests -p '*test.py'

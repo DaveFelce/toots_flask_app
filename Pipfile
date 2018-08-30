@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"asn1crypto" = "==0.24.0"
+bcrypt = "==3.1.4"
+cffi = "==1.11.5"
+colorama = "==0.3.7"
+cryptography = "==2.1.4"
+docutils = "==0.14"
+idna = "==2.6"
+jmespath = "==0.9.3"
+paramiko = "==2.4.0"
+"pyasn1" = "==0.4.2"
+pycparser = "==2.18"
+python-dateutil = "==2.6.1"
+rsa = "==3.4.2"
+"s3transfer" = "==0.1.13"
+six = "==1.11.0"
+Fabric = "==1.14.0"
+PyNaCl = "==1.2.1"
+PyYAML = "==3.12"
+flask = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
