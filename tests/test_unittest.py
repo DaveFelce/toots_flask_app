@@ -41,3 +41,5 @@ class TootsTest(unittest.TestCase):
         self.assertEqual(len(toots[0].get('children')), 4)
 
 
+if __name__ == '__main__':
+    unittest.main()
