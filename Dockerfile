@@ -1,6 +1,6 @@
 FROM       python
-RUN        pip install --upgrade pip
-RUN        pip install pipenv
+# -- Install Pipenv:
+RUN apt update && apt install python3-pip git -y && pip3 install pipenv
 COPY       . /app
 WORKDIR    /app
 RUN        pipenv install
