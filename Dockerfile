@@ -1,6 +1,11 @@
-FROM       python
-# -- Install Pipenv:
-RUN apt update && apt install python3-pip git -y && pip3 install pipenv
+FROM python:3.6
+
+RUN pip3 install pip==9.0.3
+
+# App directory
+RUN mkdir /app
+WORKDIR /app
+
 COPY       . /app
 WORKDIR    /app
 RUN        pipenv install
