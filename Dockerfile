@@ -1,5 +1,5 @@
 FROM       python
-RUN        pip install --upgrade pip==9.0.3
+RUN        pip install --upgrade pip
 RUN        pip install pipenv
 COPY       . /app
 WORKDIR    /app
