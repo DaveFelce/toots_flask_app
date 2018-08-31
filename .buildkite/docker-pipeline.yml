@@ -1,6 +1,6 @@
 steps:
   - name: ":python:"
-    command: "py.test"
+    command: "python -m unittest discover -s tests -p '*test.py'"
     plugins:
       docker-compose#v2.5.1:
         run: app
