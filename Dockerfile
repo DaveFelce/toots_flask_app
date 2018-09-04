@@ -8,6 +8,7 @@ WORKDIR /app
 
 COPY       . /app
 WORKDIR    /app
+RUN        pip install pipenv
 RUN        pipenv install
 ENV        SHELL=/bin/bash
 ENTRYPOINT ["pipenv", "run"]
