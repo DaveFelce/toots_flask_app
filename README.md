@@ -33,3 +33,7 @@ FLASK_APP=toots.py; /Users/davidfelce/dev/toots_flask_app/toots.py
 python -m unittest discover -s tests -p '*test*.py'
 
 ### Behave tests
+
+Make sure you have started the docker container, so the app is running on port 5000 locally, before running these in a demo!
+
+You set up the behave tests in Pycharm by adding a runtime config of type Behave
