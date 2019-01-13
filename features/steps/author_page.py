@@ -8,7 +8,7 @@ def step_load_page(context):
     context.browser.get('http://127.0.0.1:5000/author/2')
 
 
-@then(u'I see 3 posts from Fred')
+@then(u"I see 3 posts from Fred on Charlie's page")
 def step_should_be_three_fred_posts(context):
 
     browser = context.browser
@@ -18,5 +18,5 @@ def step_should_be_three_fred_posts(context):
     assert_in('<span>zoot choot!</span>', browser.page_source)
     assert_equal('Toots by author', browser.title)
 
-    charlie_links = browser.find_elements_by_link_text('Charlie')
-    assert_equal(len(charlie_links), 10)
+    fred_links = browser.find_elements_by_link_text('Fred')
+    assert_equal(len(fred_links), 3)
