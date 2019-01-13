@@ -5,4 +5,4 @@ Feature: Test a single author
 
   Scenario: View a single author with id 5
     When The page loads
-    Then I see 3 posts from Fred
+    Then I see 3 posts from Fred on Charlie's page

@@ -7,6 +7,9 @@ name = "pypi"
 flask = "*"
 docker = "*"
 docker-compose = "*"
+selenium = "*"
+behave = "*"
+nose = "*"
 
 [dev-packages]
 

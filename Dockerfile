@@ -9,7 +9,7 @@ WORKDIR /app
 COPY       . /app
 WORKDIR    /app
 RUN        pip install pipenv
-RUN        pipenv install
+RUN        pipenv install --system
 ENV        SHELL=/bin/bash
-ENTRYPOINT ["pipenv", "run"]
-CMD        ["python"]
+#ENTRYPOINT ["pipenv", "run"]
+CMD        ["python", "/app/toots.py"]
