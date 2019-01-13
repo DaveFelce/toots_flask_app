@@ -7,8 +7,8 @@ class FrontendTest(unittest.TestCase):
 
     def setUp(self):
         chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        self.driver = webdriver.Chrome(chrome_options=chrome_options)
+        # chrome_options.add_argument("--headless")
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def tearDown(self):
         self.driver.close()
